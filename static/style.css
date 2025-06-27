@@ -1,0 +1,309 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  position: relative;
+  direction: ltr;
+  text-align: center;
+  font-family: 'Muli', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  background: linear-gradient(135deg, #174c8f 0%, #102346 100%);
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+::-moz-selection {
+  background-color: rgba(0,0,0,0.21);
+  color: #fff;
+}
+::selection {
+  background-color: rgba(0,0,0,0.21);
+  color: #fff;
+}
+::-moz-selection {
+  background-color: rgba(0,0,0,0.21);
+  color: #fff;
+}
+#nuotron {
+  top: 50%;
+  left: 50%;
+  width: 84px;
+  height: 84px;
+  margin-top: -42px;
+  margin-left: -42px;
+  transform: rotate(45deg);
+}
+#nuotron,
+#nuotron *,
+#nuotron *:before {
+  display: block;
+  position: absolute;
+}
+#nuotron .ellipse,
+#nuotron .dot {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+#nuotron .ellipse {
+  border: 18px solid #f35635;
+  border-radius: 50%;
+}
+#nuotron .dot {
+  -webkit-animation: dotRotate 4.8s linear infinite;
+          animation: dotRotate 4.8s linear infinite;
+}
+#nuotron .dot:before {
+  content: '';
+  top: -42px;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-radius: 50%;
+  background-color: #f35635;
+  -webkit-animation: dotEffect 1.2s ease-in-out infinite;
+          animation: dotEffect 1.2s ease-in-out infinite;
+}
+@-webkit-keyframes dotEffect {
+  50% {
+    top: 102px;
+  }
+  0%, 50%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.5);
+  }
+  75% {
+    transform: scale(1.5);
+  }
+}
+@keyframes dotEffect {
+  50% {
+    top: 102px;
+  }
+  0%, 50%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.5);
+  }
+  75% {
+    transform: scale(1.5);
+  }
+}
+@-webkit-keyframes dotRotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes dotRotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#text {
+  top: 50%;
+  left: 50%;
+  width: 182px;
+  height: 182px;
+  margin-top: -91px;
+  margin-left: -91px;
+}
+#text,
+#text > * {
+  display: block;
+  position: absolute;
+  white-space: nowrap;
+  transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+#text .hover,
+#text .website {
+  top: 100%;
+  left: 50%;
+  letter-spacing: 2px;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.63);
+}
+#text .website {
+  margin-top: 28px;
+  opacity: 0;
+}
+#text .nuotron,
+#text .agency {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 182px;
+  letter-spacing: 30px;
+  color: #fff;
+  opacity: 0;
+}
+#text .nuotron {
+  right: 100%;
+  margin-right: -34px;
+}
+#text .agency {
+  left: 100%;
+}
+#text:hover .nuotron,
+#text:hover .agency {
+  letter-spacing: 14px;
+  opacity: 1;
+}
+#text:hover .nuotron {
+  margin-right: -18px;
+}
+#text:hover .hover {
+  margin-top: 28px;
+  opacity: 0;
+}
+#text:hover .website {
+  margin-top: 0;
+  opacity: 1;
+}
+.custom-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.custom-file-label {
+  display: inline-block;
+  background: #fff;
+  color: #163A6B;
+  padding: 12px 28px;
+  font-size: 19px;
+  font-weight: 700;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 10px rgba(23,76,143,0.1);
+  position: relative;
+  text-align: center;
+}
+
+.custom-file-label:hover {
+  background: #f35635;
+  color: #fff;
+}
+
+.custom-file-label input[type="file"] {
+  display: none;
+}
+
+.custom-submit-btn {
+  background: #f35635;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 14px 28px;
+  font-size: 19px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 10px rgba(23,76,143,0.15);
+  margin-top: 8px;
+}
+
+.custom-submit-btn:hover {
+  background: #163A6B;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(23,76,143,0.25);
+}
+
+
+.center-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  position: relative;
+}
+
+.maxi-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  z-index: 2;
+}
+
+.nuotron-title, .agency-title {
+  font-size: 52px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 20px;
+  margin: 0 18px;
+}
+
+.logo-dot {
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f35635;
+  border: 6px solid #fff;
+  margin: 0 10px;
+}
+
+.desc {
+  margin-top: 22px;
+  color: #d3dbe7;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  line-height: 28px;
+  text-align: center;
+}
+
+@media (max-width: 650px) {
+  .nuotron-title, .agency-title {
+    font-size: 32px;
+    letter-spacing: 8px;
+  }
+  .logo-dot {
+    width: 22px;
+    height: 22px;
+    border-width: 3px;
+  }
+  .desc {
+    font-size: 16px;
+  }
+  .custom-file-label,
+  .custom-submit-btn {
+    font-size: 15px;
+    padding: 10px 18px;
+  }
+}
+
+
+.dashboard-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  background: rgba(16, 35, 70, 0.97);
+  color: #d3dbe7;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  padding: 12px 0 10px 0;
+  letter-spacing: 0.3px;
+  z-index: 50;
+  box-shadow: 0 -2px 16px 0 rgba(23,76,143,0.11);
+  user-select: none;
+}

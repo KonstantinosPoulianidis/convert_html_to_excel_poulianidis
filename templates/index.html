@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Μετατροπέας html σε excel</title>
+  <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Muli:400,800'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<div id="nuotron">
+  <div class="ellipse"></div>
+  <div class="dot"></div>
+</div>
+
+<div class="center-container">
+
+  <form method="post" enctype="multipart/form-data" class="custom-form">
+    <label for="files" class="custom-file-label">
+      Επιλογή αρχείων
+      <input type="file" name="html_files" id="files" multiple required accept=".html,.htm">
+    </label>
+    <br>
+    <br>
+    <br>
+    <span id="selected-files" style="display:block;margin-bottom:15px;color:#fff;font-size:16px;"></span>
+    <br>
+    <button type="submit" class="custom-submit-btn">Ξεκινήστε την μετατροπή</button>
+  </form>
+  <div class="desc">Μετατροπέας html σε excel<br>για κινήσεις τραπεζικού λογαριασμού</div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script>
+document.getElementById('files').addEventListener('change', function(){
+  const files = this.files;
+  let msg = '';
+  if(files.length === 0){
+    msg = 'Δεν επιλέχθηκε κανένα αρχείο.';
+  } else if(files.length === 1){
+    msg = '1 αρχείο';
+  } else {
+    msg = files.length + ' αρχεία';
+  }
+  document.getElementById('selected-files').innerText = msg;
+});
+</script>
+<footer class="dashboard-footer">
+    © ΚΩΝΣΤΑΝΤΙΝΟΣ ΠΟΥΛΙΑΝΙΔΗΣ για ΛΑΖΑΡΟ ΒΑΣΙΛΕΙΑΔΗ | VERSION 1.2.
+</footer>
+
+</body>
+
+</html>
