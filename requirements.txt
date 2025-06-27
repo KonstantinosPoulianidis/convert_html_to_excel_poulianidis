@@ -2,3 +2,4 @@ flask
 pandas
 beautifulsoup4
 openpyxl
+gunicorn
